@@ -67,7 +67,11 @@ final class TextInjector {
     // MARK: - CGEvent Cmd+V
 
     private func simulateCmdV() {
-        // Virtual key 0x09 = 'v' on US layout
+        // Virtual key 0x09 is the physical 'V' key position (US ANSI layout, key code 9).
+        // The Cmd+V shortcut is universally interpreted as "paste" by macOS regardless of
+        // the keyboard language, because AppKit maps the shortcut to the Cmd+V character
+        // (not to the physical key position). For non-US layouts this is still safe
+        // because Cmd-modified events bypass key-character remapping.
         let src = CGEventSource(stateID: .hidSystemState)
         guard
             let down = CGEvent(keyboardEventSource: src, virtualKey: 0x09, keyDown: true),

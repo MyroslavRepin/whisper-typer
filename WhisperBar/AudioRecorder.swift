@@ -182,7 +182,10 @@ final class AudioRecorder {
         // data chunk
         wStr("data"); w32(dataSize)
         for s in samples {
-            w16(Int16(max(-32_768, min(32_767, Int32(s * 32_767)))))
+            // Clamp to full Int16 range using named constants
+            let scaled  = s * Float(Int16.max)
+            let clamped = max(Float(Int16.min), min(Float(Int16.max), scaled))
+            w16(Int16(clamped))
         }
 
         do {

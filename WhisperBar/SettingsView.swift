@@ -98,7 +98,7 @@ struct SettingsView: View {
                     HStack {
                         TextField("/usr/local/bin/whisper-cpp", text: $whisperBinaryPath)
                             .textFieldStyle(.roundedBorder)
-                        Button("Browse\u{2026}") { browseBinary() }
+                        Button("Browse…") { browseBinary() }
                     }
                 }
 
@@ -106,7 +106,7 @@ struct SettingsView: View {
                     HStack {
                         TextField("~/.whisper/models", text: $modelsFolderPath)
                             .textFieldStyle(.roundedBorder)
-                        Button("Browse\u{2026}") { browseModelsFolder() }
+                        Button("Browse…") { browseModelsFolder() }
                     }
                 }
             }

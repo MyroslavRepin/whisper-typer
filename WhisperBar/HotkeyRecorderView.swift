@@ -91,7 +91,7 @@ final class HotkeyRecorderNSView: NSView {
         isRecording.toggle()
         if isRecording {
             button.title = "Cancel"
-            label.stringValue = "Press a key combo\u{2026}"
+            label.stringValue = "Press a key combo…"
             window?.makeFirstResponder(self)
         } else {
             button.title = "Record"
@@ -106,7 +106,9 @@ final class HotkeyRecorderNSView: NSView {
     override func keyDown(with event: NSEvent) {
         guard isRecording else { super.keyDown(with: event); return }
 
-        // Ignore pure-modifier key presses
+        // Ignore pure-modifier key presses.
+        // Key codes: 54/55 = Cmd, 56/60 = Shift, 57 = CapsLock,
+        //            58/61 = Option, 59/62 = Control, 63 = Fn
         let modifierKeyCodes: Set<UInt16> = [54, 55, 56, 57, 58, 59, 60, 61, 62, 63]
         guard !modifierKeyCodes.contains(event.keyCode) else { return }
 

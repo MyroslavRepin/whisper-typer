@@ -53,7 +53,7 @@ struct RecordingPillView: View {
             VStack(spacing: 6) {
                 WaveformView(amplitudes: amplitudes)
 
-                Text("listening\u{2026}")
+                Text("listening…")
                     .font(.system(size: 11, weight: .regular, design: .rounded))
                     .foregroundColor(Color.white.opacity(0.55))
                     .kerning(0.3)

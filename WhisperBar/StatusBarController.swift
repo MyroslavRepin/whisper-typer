@@ -57,7 +57,7 @@ final class StatusBarController: NSObject {
 
         // ── Settings ──────────────────────────────────────────────────
         let settingsItem = NSMenuItem(
-            title: "Settings\u{2026}",
+            title: "Settings…",
             action: #selector(openSettings),
             keyEquivalent: ","
         )
