@@ -1,0 +1,21 @@
+# Build products
+build/
+DerivedData/
+*.xcarchive
+
+# Xcode user data (machine-specific, not shared)
+WhisperBar.xcodeproj/project.xcworkspace/xcuserdata/
+WhisperBar.xcodeproj/xcuserdata/
+*.xcuserstate
+*.xcuserdatad/
+
+# Swift Package Manager
+.build/
+.swiftpm/
+
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Temporary audio files produced at runtime
+/tmp/whisperbar_*.wav
