@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!-- App basics -->
+    <key>CFBundleIdentifier</key>
+    <string>com.whisperbar.app</string>
+
+    <key>CFBundleName</key>
+    <string>WhisperBar</string>
+
+    <key>CFBundleDisplayName</key>
+    <string>WhisperBar</string>
+
+    <key>CFBundleExecutable</key>
+    <string>$(EXECUTABLE_NAME)</string>
+
+    <key>CFBundlePackageType</key>
+    <string>APPL</string>
+
+    <key>CFBundleSignature</key>
+    <string>????</string>
+
+    <key>CFBundleVersion</key>
+    <string>1</string>
+
+    <key>CFBundleShortVersionString</key>
+    <string>1.0.0</string>
+
+    <key>CFBundleIconFile</key>
+    <string>AppIcon</string>
+
+    <key>NSPrincipalClass</key>
+    <string>NSApplication</string>
+
+    <!-- Hide Dock icon — the app lives entirely in the menu bar -->
+    <key>LSUIElement</key>
+    <true/>
+
+    <!-- Microphone usage description (required for AVAudioEngine) -->
+    <key>NSMicrophoneUsageDescription</key>
+    <string>WhisperBar records your voice to transcribe speech into text using Whisper.</string>
+
+    <!-- Accessibility usage description -->
+    <key>NSAppleEventsUsageDescription</key>
+    <string>WhisperBar uses Accessibility to inject transcribed text into the focused app.</string>
+
+    <!-- Minimum macOS version -->
+    <key>LSMinimumSystemVersion</key>
+    <string>$(MACOSX_DEPLOYMENT_TARGET)</string>
+
+    <!-- Prevent sleeping during recording -->
+    <key>NSSupportsAutomaticGraphicsSwitching</key>
+    <true/>
+</dict>
+</plist>
